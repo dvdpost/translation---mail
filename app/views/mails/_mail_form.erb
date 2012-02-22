@@ -1,0 +1,30 @@
+<%= form_for(@mail,:url=>@path) do |f| %>
+  <%= f.error_messages if 1==0 %>
+  <p>
+    <%= f.label :name %><br /><br />
+ <input id="mail_name" name="mail[name]" size="85" type="text" value="<%= h @mail.name%>" tabindex="1" />
+  </p>
+  <p>
+    force copy by mail :<br />
+    yes : 
+    <% status = @mail.force_copy %>
+    <%= f.radio_button :force_copy, 1, :checked => status %>
+    no :
+    <%= f.radio_button :force_copy, 0, :checked => !status %>
+  </p>
+  <p>
+    category : <%= f.select :category_id, @categories.collect{|category| [category.name, category.id]}, {:include_blank => true} %>
+  </p>
+  <p>
+    reminder :<br />
+    yes : 
+    <% status = @mail.reminder %>
+    <%= f.radio_button :reminder, 1, :checked => status %>
+    no :
+    <%= f.radio_button :reminder, 0, :checked => !status %>
+  </p>
+  
+  <p id ="translation_p">
+    <%= f.submit 'Validate', :tabindex => 2 %> - <%= link_to 'Back', mails_path(:page=>@page), :tabindex => 3 %>
+  </p>
+<% end %>

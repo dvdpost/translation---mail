@@ -1,0 +1,10 @@
+<tr class='table_height <%= cycle('blanc', 'gris') %>'>
+	<td class="id_mail" ><%=h mail.id %></td>
+ 	<td><%= link_to mail_title(mail.name) ,mail_translations_path(mail,:page=>@page) %> </td>
+ 	<td><%= mail.category_ticket.name if mail.category_ticket %></td>
+  <td align='center'><%= mail.force_copy ? 'yes': 'no' %></td>
+  <td align='center'><%= mail.reminder ? 'yes': 'no' %></td>
+	<td align='center'><%= link_to 'Edit', edit_mail_path(mail,:page=>@page) %></td>
+	<td align='center'><%= link_to image_tag("trash.png", :border=>0), mail_path(mail,:page=>@page), :confirm => 'Are you sure?', :method => :delete %> </td>
+	<td><%= new_translations_link(mail,@languages)%></td>
+</tr>

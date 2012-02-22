@@ -1,0 +1,14 @@
+<style type="text/css" media="screen">
+  body
+  {
+    margin:auto !important;
+  }
+</style>
+<h3 class="menu_translation"><%= link_to 'listing mails', mails_path(:page=>@page), :class=>'list' %> <%= new_translations_link(@mail,@languages) %></h3>
+<h1><%= @mail.name %></h1>
+<table >
+	<%= render :partial => 'translation', :collection =>  @translations %>
+</table>
+
+<br />
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html><head>
+
+
+
+  <meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+  <title>mail: <%= controller.action_name %></title>
+  <%= javascript_include_tag "mail_index.js" %>
+  <%= javascript_include_tag "jquery-1.7.1.js", "rails.js" %>
+	<%= csrf_meta_tag %>
+  <%= stylesheet_link_tag "style.css", :media => :all %>
+</head>
+
+
+<body>
+<div id="background">
+
+
+<div class="main-holder">
+	<table>
+	<tr>
+	<td><%= image_tag("bg_logo.gif") %></td>
+	<td class="img_tr"><h1><%= image_tag("mailling.gif",:class=>"img_mailing") %> DVDPost Mailings</h1></td>
+	</tr>
+
+	</table>
+
+	<table class="action_mail">
+	<tr>
+	<td ><%= link_to 'New mail', new_mail_path,:class=>'mail_button', :tabindex => '997' %></td>
+	<td align="right" width="600">search by mail id : 
+
+		<input name="search" id="search" type="text" tabindex="998" onKeyPress="checkEnter(event)">
+
+	    <input name="ok" value="search" onclick="go()" type="button"  tabindex="999" >
+	</td>
+	</tr>
+
+	</table>
+
+
+
+
+<p style="color: green"><%= flash[:notice] %></p>
+<%= yield %>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+ActionController::Routing::Routes.draw do |map|
+  map.resources :translations
+  map.resources :mails
+  
+  map.resources :mails do |mail|
+    mail.resources :translations
+  end
+  map.resources :pages, :only => :index 
+  map.resources :keys, :path_prefix => '/page/:page', :requirements => { :page => /.*/} do |key|
+    key.resources :references, :path_prefix => '/page/:page/keys/:key_id', :requirements => { :page => /.*/}
+  end
+  map.resources :references, :path_prefix => '/page/:page', :requirements => { :page => /.*/} do |reference|
+    reference.resources :keys_translations, :path_prefix => '/page/:page/references/:reference_id', :requirements => { :page => /.*/}
+  end 
+  
+   
+  
+  map.root :controller => "mails"
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
+end

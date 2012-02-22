@@ -1,0 +1,17 @@
+<p class="mailing_subject gris">
+		Language : <%= translation.language.name %><br />
+		 Subject <% translation.language.name %>: <%=h translation.subject %> <%= link_to 'Edit', edit_mail_translation_path(@mail,translation,:page=>@page),:class=>"edit" %>
+		 <%= link_to 'Destroy', mail_translation_path(@mail,translation,:page=>@page), :confirm => 'Are you sure?', :method => :delete,:class=>"destroy" %> 
+	</p>
+<% if translation.body && translation.body.include?('mail_messages_sent_history_id') === false %>
+<p class="mailing_subject rouge">
+  This mail doesn't content read tag <br /><br />add this code after body tag (exepection for emailr email)<br /><br />&lt;img src="http://www.dvdpost.be/flag.php?mail_id=$$$mail_messages_sent_history_id$$$" width="1" height="1"&gt;<br />
+</p>
+<% end %>
+<% check = check_url(translation) %>
+<% if check == false%>
+<p class="mailing_subject rouge">
+  one or many url(s) from this mail are wrong... check all link and puts the good language into these urls http://www.private.dvdpost.com/<%= translation.language.name %>/...
+</p>
+<% end %>
+		 <br /><%= replace_data(translation.body, @options) %>

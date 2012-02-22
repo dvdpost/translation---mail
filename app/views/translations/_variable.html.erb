@@ -1,0 +1,17 @@
+<% data = variable.balise+variable.var_key+variable.balise %>
+<tr>
+  <td>
+      <%= variable.var_key %>
+   </td>
+   <td>
+     <div  style=' border: 1px solid #000; background: #f0f0f0;cursor:pointer; text-align:center;padding: 0 2px'  onclick="insertAtCursor(document.getElementById('translation_body'),'<%= data %>')">
+       insert
+     </div>
+   </td>
+   <td>
+    <%= variable.description %>
+   </td>
+</tr>
+<tr>
+  <td colspan='3'><hr /></td>
+</tr>

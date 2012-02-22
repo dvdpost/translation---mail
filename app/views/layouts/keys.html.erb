@@ -1,0 +1,59 @@
+<html><head>
+
+
+
+  <meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+  <title>translation: <%= controller.action_name %></title>
+ 
+  <%= javascript_include_tag "prototype.js" %>
+
+  <%= javascript_include_tag "scriptaculous.js?load=effects,dragdrop,controls" %>
+
+  <%= javascript_include_tag "key_index.js" %>
+
+  <%= stylesheet_link_tag "style.css" %>
+
+</head>
+
+
+<body>
+<div id="background">
+
+
+<div class="main-holder">
+	<table>
+	<tr>
+	<td><%= image_tag("bg_logo.gif") %></td>
+	<td class="img_tr"><h1><%= image_tag("translate.gif",:class=>"img_mailing") %> DVDPost Translations</h1></td>
+	</tr>
+
+	</table>
+
+	<table class="action_mail">
+	<tr>
+	<td ><%= link_to 'New key', new_key_path(),:class=>'mail_button', :tabindex => '996' if @page %></td>
+	
+	<td align="right" width="400">Search by page : 
+
+			
+		<input autocomplete="off" id="page_search" name="page[search]" size="30" type="text" onKeyPress="checkEnter(event)" /><div class="auto_complete" id="page_search_auto_complete"></div>
+		
+		
+	    <input name="ok" value="Search" onclick="page_go()" type="button"  tabindex="997">
+	</td>
+	</tr>
+
+	</table>
+
+
+
+
+<p style="color: green"><%= flash[:notice] %></p>
+<% if @page %>
+<p class="translate_page">Page : <%= @page %></p>
+<% end %>
+<%= yield %>
+</div>
+</div>
+</body>
+</html>

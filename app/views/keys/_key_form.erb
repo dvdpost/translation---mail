@@ -1,0 +1,17 @@
+<%= form_for(@key,:url=>@path) do |f| %>
+  <%= f.error_messages if 1==0%>
+  <%= hidden_field_tag :search, @search if @search %>
+  <p>
+    <%= f.label :name %><br /><br />
+    <input id="key_name" name="key[name]" size="85" type="text" value="<%= h @key.name%>" tabindex="<%= indexer() %>" />
+  </p>
+  
+  <p>
+  	<%= f.label :page %><br /><br />
+	<%= f.text_field :page, :value=> @page,:tabindex=> indexer() %><br /><br />
+  </p>
+  <p> <%= select("country", "id", @countries.collect {|p| [ p.name, p.id ] }) %> </p>
+  <p id ="translation_p">
+    <%= f.submit 'Validate', :tabindex => 2 %> - <%= link_to 'Back', keys_path( :pagination=>@pagination, :search => @search), :tabindex => indexer() %>
+  </p>
+<% end %>

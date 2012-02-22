@@ -1,0 +1,215 @@
+@charset "ISO-8859-1";
+/* CSS Document */
+
+body, html 
+{ 
+	height:100%;
+}
+
+html, div, map, dt, isindex, form 
+{
+	display:block;
+}
+
+body 
+{
+	margin:0;
+	color:#30292a;
+	font:13px Arial, Helvetica, sans-serif;
+	width:970px;
+	margin:auto;
+}
+
+a 
+{
+	text-decoration:underline;
+	color:#30292a;
+}
+
+a:hover 
+{ 
+	text-decoration:none; 
+}
+
+img 
+{ 
+	border-style:none; 
+}
+
+#header .logo 
+{
+	position:absolute;
+	top:30px;
+	left:10px;
+	background:url(../images//bg-logo.gif) no-repeat;
+	text-indent:-9999px;
+	overflow:hidden;
+	width:311px;
+	height:67px;
+}
+
+#header_table 
+{
+	color:#FFF;
+	text-align:left;
+}
+.table_height
+{
+	height:30px;
+}
+th 
+{
+	padding-left:10px;
+	text-align:left;
+}
+
+.blanc
+{
+	background:#f0f0f0;
+}
+
+.gris
+{
+	background:#aaa;
+}
+
+.main-holder 
+{
+	padding:15px 10px 8px ;
+	background:#fff;
+	
+}
+
+.main-holder h1 
+{
+	margin:0 0 18px;
+	font-size:24px;
+	line-height:35px;
+	color:#ff4b00;
+	font-weight: normal;
+}
+
+.action_mail 
+{
+	padding:10px ;
+	background:#ff4b00;
+	color:#FFF;
+	width:970px;
+	margin-bottom:10px;
+}
+
+.mail_button 
+{
+	background-color:#FFF;
+	color:#333;
+	font-size:12px;
+	font-weight:bold;
+	text-transform: uppercase;
+	background-image:url(../images/new.png);
+	background-repeat: no-repeat;
+	padding:8px;
+	padding-left:35px;
+	text-decoration: none;
+	background-position: 10px;	
+}
+.id_mail 
+{
+	padding-left:5px;
+	color:#30292a;
+	font-weight:bold;
+}
+.table_title
+{
+	background:#333;
+	width:970px;
+}
+.img_tr
+{
+	text-align:right;
+	width:600px;
+}
+.img_mailing
+{
+	vertical-align: middle;
+}
+.mailing_subject 
+{
+	background-color:#CCC;
+	text-align:left;
+	width:950px;
+	padding:10px;
+	font-weight:bold;
+}
+.edit 
+{
+	background-image:url(../images/edit.png);
+	background-repeat: no-repeat;
+	padding-left:20px;
+	font-weight:bold;
+	text-decoration: none;	
+	font-size: 12px;
+}
+	
+.new 
+{
+	background-image:url(../images/new.png);
+	background-repeat: no-repeat;
+	padding-left:20px;
+	font-weight:bold;
+	text-decoration: none;	
+}
+.list 
+{
+	background-image:url(../images/list.png);
+	background-repeat: no-repeat;
+	padding-left:20px;
+	font-weight:bold;
+	text-decoration: none;
+	font-size: 12px;	
+}
+
+.destroy 
+{
+	background-image:url(../images/trash.png);
+	background-repeat: no-repeat;
+	padding-left:20px;
+	font-weight:bold;
+	text-decoration: none;	
+}
+.pagination
+{
+	text-align:center;
+	width:970px;
+}
+#mail_name
+{
+	font-size:18px;
+}
+.menu_translation
+{
+	text-align:right;
+}
+.img_tr{
+	text-align:right;
+	width:600px;
+}
+.img_mailing
+{
+	vertical-align: middle;
+}
+
+.mailing_subject {
+	background-color:#CCC;
+	text-align:left;
+	width:950px;
+	padding:10px;
+	font-weight:bold;
+}
+#translation_subject
+{
+	font-size:18px;
+}
+#translation_p
+{
+	text-align:right;
+}

@@ -1,0 +1,24 @@
+# Filters added to this controller apply to all controllers in the application.
+# Likewise, all the methods added will be available for all controllers.
+
+class ApplicationController < ActionController::Base
+  helper :all # include all helpers, all the time
+  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+
+  before_filter :authenticate
+  after_filter :set_headers
+
+  # Scrub sensitive parameters from your log
+  # filter_parameter_logging :password
+  
+  def set_headers
+    response.headers['Content-type'] = 'text/html; charset=iso-8859-1'
+  end
+
+  private
+  def authenticate
+    authenticate_or_request_with_http_basic('Administration') do |username, password|
+      username == 'admin' && password == 'm41ler$$'
+    end
+  end
+end

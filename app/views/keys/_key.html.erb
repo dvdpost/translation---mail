@@ -1,0 +1,19 @@
+<tr class='table_height gris'>
+	<td class="padding" colspan="3">
+		<%= form_for(@reference, :url => references_path(:pagination=>@pagination, :search => @search)) do |f| %>
+			<%= key.name %> - country: 
+			  <%= f.collection_select :country_id, @countries, :id, :name %>
+			  <%= f.hidden_field :key_id, :value=>key.id %>
+			  <%= hidden_field_tag 'page',@page  %>
+			  <%= f.submit 'add' %>
+
+
+
+		<% end %>
+	</td>
+	<td align="center"><%= link_to 'Edit', edit_key_path(:id=>key.id,:pagination=>@pagination, :search => @search) %></td>	
+	<td align='center'><%= link_to image_tag("trash.png", :border=>0), key_path(:id=>key,:pagination=>@pagination, :search => @search), :confirm => 'Are you sure?', :method => :delete %> </td>
+</tr>
+<%= 
+ key_translations_link(key,@languages,@countries) 
+%>
