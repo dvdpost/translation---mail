@@ -19,7 +19,7 @@ set :rails_env, "production"
 #	Servers
 #############################################################
  
-set :user, "dvdpost"
+set :user, "translations"
 set :domain, "staging.translations.dvdpost.be"
 set :port, 22012
 server domain, :app, :web
@@ -29,12 +29,10 @@ role :db, domain, :primary => true
 #	Git
 #############################################################
  
-set :scm, :subversion
-#set :branch, "master"
-set :scm_user, 'dvdpost'
-set :scm_passphrase, "(:melissa:)"
-set :repository, "svn+ssh://dvdpost@192.168.100.206/data/svn/rails"
-set :deploy_via, :checkout
+set :scm, :git
+set :branch, "master"
+set :repository, "git@github.com:dvdpost/translation---mail.git"
+set :deploy_via, :remote_cache
  
 #############################################################
 #	Passenger
