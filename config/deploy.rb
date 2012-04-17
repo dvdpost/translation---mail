@@ -5,7 +5,8 @@ set :default_environment, {
     'PATH' => "/opt/ruby-1.9.2/bin:/usr/local/bin:/bin:/usr/bin:/bin",
     'GEM_HOME' => '/opt/ruby-1.9.2/lib/ruby/gems/1.9.1',
     'GEM_PATH' => '/opt/ruby-1.9.2/lib/ruby/gems/1.9.1',
-    'BUNDLE_PATH' => '/opt/ruby-1.9.2/lib/ruby/gems/1.9.1/gems'
+    'BUNDLE_PATH' => '/opt/ruby-1.9.2/lib/ruby/gems/1.9.1/gems',
+    'LANG' => 'en_US.UTF-8'
 }
 
 
