@@ -2,7 +2,10 @@ set :stages, %w(staging production)
 set :default_stage, "staging"
 require "capistrano/ext/multistage"
 set :default_environment, {
-  'PATH' => "/opt/ruby-enterprise-1.8.7-2010.01/bin/:$PATH"
+    'PATH' => "/opt/ruby-1.9.2/bin:/usr/local/bin:/bin:/usr/bin:/bin",
+    'GEM_HOME' => '/opt/ruby-1.9.2/lib/ruby/gems/1.9.1',
+    'GEM_PATH' => '/opt/ruby-1.9.2/lib/ruby/gems/1.9.1',
+    'BUNDLE_PATH' => '/opt/ruby-1.9.2/lib/ruby/gems/1.9.1/gems'
 }
 
 
