@@ -43,7 +43,7 @@ namespace :deploy do
   task :after_update_code do
     db_config = <<-EOF
     production:    
-      adapter: mysql
+      adapter: mysql2
       encoding: latin1
       username: webuser
       password: 3gallfir-
@@ -51,14 +51,14 @@ namespace :deploy do
       host: matadi
       port: 3306
     legacy:
-      adapter: mysql
+      adapter: mysql2
       encoding: latin1
       username: webuser
       password: 3gallfir-
       database: dvdpost_be_prod
       host: matadi
     legacy_common:
-      adapter: mysql
+      adapter: mysql2
       database: dvdpost_common
       host: matadi
       username: webuser
