@@ -68,7 +68,7 @@ Mail::Application.routes.draw do
   # resource :keys do
   #   resources :auto_complete_for_page_search, :controller => :keys, :action => :auto_complete_for_page_search
   # end
-  scope 'page/:page' do
+  scope 'page/:page', :constraints => { :page => /.*/ } do
     resources :keys  do
       resources :references
     end
