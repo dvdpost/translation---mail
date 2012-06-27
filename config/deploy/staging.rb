@@ -29,12 +29,10 @@ role :db, domain, :primary => true
 #	Git
 #############################################################
  
-set :scm, :subversion
-#set :branch, "master"
-set :scm_user, 'dvdpost'
-set :scm_passphrase, "(:melissa:)"
-set :repository, "svn+ssh://dvdpost@192.168.100.206/data/svn/rails"
-set :deploy_via, :checkout
+set :scm, :git
+set :branch, "master"
+set :repository, "git@github.com:dvdpost/translation---mail.git"
+set :deploy_via, :remote_cache
  
 #############################################################
 #	Passenger
@@ -45,7 +43,7 @@ namespace :deploy do
   task :after_update_code do
     db_config = <<-EOF
     staging:    
-      adapter: mysql
+      adapter: mysql2
       encoding: latin1
       username: test_devuser
       password: 1nterD3nt
@@ -53,14 +51,14 @@ namespace :deploy do
       host: matadi
       port: 3306
     legacy:
-      adapter: mysql
+      adapter: mysql2
       encoding: latin1
       username: webuser
       password: 3gallfir-
       database: dvdpost_test
       host: matadi
     legacy_common:
-      adapter: mysql
+      adapter: mysql2
       database: dvdpost_common
       host: matadi
       username: webuser
