@@ -19,7 +19,7 @@ set :rails_env, "staging"
 #	Servers
 #############################################################
  
-set :user, "dvdpost"
+set :user, "translations"
 set :domain, "staging.translations.dvdpost.be"
 set :port, 22012
 server domain, :app, :web

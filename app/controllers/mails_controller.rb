@@ -29,7 +29,7 @@ class MailsController < ApplicationController
   
   def update
      respond_to do |format|
-       if @mail.update_attributes(params[:mail])
+       if @mail.update_attributes(params[:mailer])
          flash[:notice] = 'mail was successfully updated.'
          format.html { redirect_to(:action =>"index",:page=>@page) }
        else
@@ -49,7 +49,7 @@ class MailsController < ApplicationController
    end
 
    def create
-     @mail = Mailer.new(params[:mail])
+     @mail = Mailer.new(params[:mailer])
 
      respond_to do |format|
        if @mail.save
