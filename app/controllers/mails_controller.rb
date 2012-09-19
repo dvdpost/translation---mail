@@ -57,6 +57,7 @@ class MailsController < ApplicationController
          format.html { redirect_to(:action =>"index") }
        else
          @path=mails_path(:page=>@page)
+         @categories = CategoryTicket.all
          format.html { render :action => "new" }
        end
      end
