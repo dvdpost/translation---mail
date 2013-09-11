@@ -20,10 +20,11 @@ set :rails_env, "staging"
 #############################################################
  
 set :user, "translations"
-set :domain, "staging.translations.dvdpost.be"
+set :domain2, "94.139.62.122"
+set :domain, "217.112.190.177"
 set :port, 22012
-server domain, :app, :web
-role :db, domain, :primary => true
+server domain2, :app, :web
+role :db, domain2, :primary => true
  
 #############################################################
 #	Git

@@ -4,7 +4,13 @@
  
 set :application, "translations"
 set :deploy_to, "/home/webapps/translations/production"
- 
+
+set :default_environment, {
+    'PATH' => "/opt/ruby-1.9.3-p448/bin:/opt/ruby/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/ruby/bin::/opt/ruby/bin:",
+    'GEM_HOME' => '/opt/ruby-1.9.3-p448/lib/ruby/gems/1.9.1',
+    'GEM_PATH' => '/opt/ruby-1.9.3-p448/lib/ruby/gems/1.9.1',
+    'BUNDLE_PATH' => '/opt/ruby-1.9.3-p448/lib/ruby/gems/1.9.1/gems'
+} 
 #############################################################
 #	Settings
 #############################################################
@@ -20,7 +26,7 @@ set :rails_env, "production"
 #############################################################
  
 set :user, "translations"
-set :domain, "staging.translations.dvdpost.be"
+set :domain, "94.139.62.122"
 set :port, 22012
 server domain, :app, :web
 role :db, domain, :primary => true
@@ -40,7 +46,7 @@ set :deploy_via, :remote_cache
  
 namespace :deploy do
   desc "Create the database yaml file"
-  task :after_update_code do
+  after "deploy:update_code" do
     db_config = <<-EOF
     production:    
       adapter: mysql2
